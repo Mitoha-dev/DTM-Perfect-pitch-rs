@@ -9,15 +9,25 @@ use std::f32::consts::PI;
 use std::sync::mpsc::{self, Receiver, Sender};
 use std::thread;
 
-const WINDOW_SIZE: usize = 4096;
-const HOP_SIZE: usize = 512;
-const THRESHOLD: f32 = 0.05;
+const WINDOW_SIZE: usize = 8192;
+const HOP_SIZE: usize = 1024;
+const THRESHOLD: f32 = 0.02;
 
 struct AudioMessage {
-    note: String,
+    note_name: String,
     octave: i32,
     freq: f32,
+    deviation_cents: f32,
     amplitude: f32,
+}
+
+struct TunerApp {
+    receiver: Receiver<AudioMessage>,
+    display_note: String,
+    display_freq: String,
+    display_cents: f32,
+    display_amp: f32,
+    smoothed_cents: f32,
 }
 
 fn main() -> Result<(), eframe::Error> {
@@ -25,36 +35,31 @@ fn main() -> Result<(), eframe::Error> {
 
     thread::spawn(move || {
         if let Err(e) = run_audio_loop(tx) {
-            eprintln!("Audio thread error: {}", e);
+            eprintln!("Audio Error: {}", e);
         }
     });
 
     let options = eframe::NativeOptions {
-        viewport: egui::ViewportBuilder::default().with_inner_size([400.0, 300.0]),
+        viewport: egui::ViewportBuilder::default().with_inner_size([500.0, 400.0]),
         ..Default::default()
     };
 
     eframe::run_native(
-        "Rust Tuner",
+        "High-Precision Rust Tuner",
         options,
         Box::new(|_cc| Ok(Box::new(TunerApp::new(rx)))),
     )
-}
-
-struct TunerApp {
-    receiver: Receiver<AudioMessage>,
-    current_note: String,
-    current_freq: String,
-    current_amp: f32,
 }
 
 impl TunerApp {
     fn new(receiver: Receiver<AudioMessage>) -> Self {
         Self {
             receiver,
-            current_note: "--".to_string(),
-            current_freq: "0.0 Hz".to_string(),
-            current_amp: 0.0,
+            display_note: "--".to_string(),
+            display_freq: "0.0 Hz".to_string(),
+            display_cents: 0.0,
+            display_amp: 0.0,
+            smoothed_cents: 0.0,
         }
     }
 }
@@ -63,47 +68,94 @@ impl eframe::App for TunerApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         if let Some(msg) = self.receiver.try_iter().last() {
             if msg.amplitude > THRESHOLD {
-                self.current_note = format!("{}{}", msg.note, msg.octave);
-                self.current_freq = format!("{:.1} Hz", msg.freq);
-                self.current_amp = msg.amplitude;
+                self.display_note = format!("{}{}", msg.note_name, msg.octave);
+                self.display_freq = format!("{:.1} Hz", msg.freq);
+                self.display_cents = msg.deviation_cents;
+                self.display_amp = msg.amplitude;
             } else {
-                self.current_amp = 0.0;
+                self.display_amp *= 0.9;
             }
         } else {
-            if self.current_amp > 0.0 {
-                self.current_amp *= 0.95;
-            }
+            self.display_amp *= 0.95;
         }
+
+        self.smoothed_cents += (self.display_cents - self.smoothed_cents) * 0.2;
 
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.vertical_centered(|ui| {
+                ui.add_space(20.0);
+
+                let canvas_height = 40.0;
+                let (response, painter) =
+                    ui.allocate_painter(egui::Vec2::new(300.0, canvas_height), egui::Sense::hover());
+
+                let rect = response.rect;
+                painter.rect_filled(rect, 5.0, egui::Color32::from_gray(50));
+
+                let center_x = rect.center().x;
+                painter.line_segment(
+                    [
+                        egui::Pos2::new(center_x, rect.top()),
+                        egui::Pos2::new(center_x, rect.bottom()),
+                    ],
+                    egui::Stroke::new(2.0, egui::Color32::WHITE),
+                );
+
+                let clamped_cents = self.smoothed_cents.clamp(-50.0, 50.0);
+                let offset = (clamped_cents / 50.0) * (rect.width() / 2.0);
+                let needle_x = center_x + offset;
+
+                let needle_color = if self.smoothed_cents.abs() < 5.0 {
+                    egui::Color32::GREEN
+                } else {
+                    egui::Color32::RED
+                };
+
+                painter.circle_filled(
+                    egui::Pos2::new(needle_x, rect.center().y),
+                    10.0,
+                    needle_color,
+                );
+
+                ui.add_space(10.0);
+
+                ui.label(
+                    egui::RichText::new(format!("{:.1} cents", self.smoothed_cents))
+                        .size(20.0)
+                        .color(needle_color),
+                );
+
                 ui.add_space(30.0);
 
-                let progress = (self.current_amp * 5.0).clamp(0.0, 1.0);
-                ui.add(egui::ProgressBar::new(progress).animate(true));
-
-                ui.add_space(40.0);
-
-                let note_color = if self.current_amp > THRESHOLD {
-                    egui::Color32::WHITE
+                let text_color = if self.display_amp > THRESHOLD {
+                    if self.smoothed_cents.abs() < 5.0 {
+                        egui::Color32::GREEN
+                    } else {
+                        egui::Color32::WHITE
+                    }
                 } else {
-                    egui::Color32::from_rgb(80, 80, 80)
+                    egui::Color32::DARK_GRAY
                 };
 
                 ui.label(
-                    egui::RichText::new(&self.current_note)
-                        .size(120.0)
+                    egui::RichText::new(&self.display_note)
+                        .size(140.0)
                         .strong()
-                        .color(note_color),
+                        .color(text_color),
                 );
 
                 ui.add_space(20.0);
 
                 ui.label(
-                    egui::RichText::new(&self.current_freq)
-                        .size(30.0)
-                        .color(egui::Color32::LIGHT_GRAY),
+                    egui::RichText::new(&self.display_freq)
+                        .size(24.0)
+                        .color(egui::Color32::GRAY),
                 );
+
+                ui.add_space(20.0);
+
+                let progress = (self.display_amp * 5.0).clamp(0.0, 1.0);
+                ui.add(egui::ProgressBar::new(progress).animate(true));
             });
         });
 
@@ -129,7 +181,6 @@ fn run_audio_loop(sender: Sender<AudioMessage>) -> anyhow::Result<()> {
         |err| eprintln!("Stream error: {}", err),
         None,
     )?;
-
     stream.play()?;
 
     let mut planner = FftPlanner::new();
@@ -150,7 +201,6 @@ fn run_audio_loop(sender: Sender<AudioMessage>) -> anyhow::Result<()> {
                 ring_buffer.pop_front();
             }
         }
-
         if ring_buffer.len() < WINDOW_SIZE {
             if let Ok(sample) = audio_rx.recv() {
                 ring_buffer.push_back(sample);
@@ -168,40 +218,51 @@ fn run_audio_loop(sender: Sender<AudioMessage>) -> anyhow::Result<()> {
         if rms > THRESHOLD {
             fft.process(&mut fft_input);
 
-            let (max_index, _) = fft_input
+            let spectrum: Vec<f32> =
+                fft_input.iter().take(WINDOW_SIZE / 2).map(|c| c.norm()).collect();
+
+            let (max_idx, _) = spectrum
                 .iter()
-                .take(WINDOW_SIZE / 2)
                 .enumerate()
                 .skip(1)
-                .max_by(|(_, a), (_, b)| a.norm().partial_cmp(&b.norm()).unwrap())
-                .unwrap_or((0, &Complex::default()));
+                .max_by(|a, b| a.1.partial_cmp(b.1).unwrap())
+                .unwrap_or((0, &0.0));
 
-            let max_freq = max_index as f32 * sample_rate / WINDOW_SIZE as f32;
+            let interpolated_freq = if max_idx > 0 && max_idx < spectrum.len() - 1 {
+                let y_l = spectrum[max_idx - 1];
+                let y_c = spectrum[max_idx];
+                let y_r = spectrum[max_idx + 1];
 
-            if max_freq > 0.0 {
-                let note_num = 12.0 * (max_freq / 440.0).log2() + 69.0;
-                let note_num_round = note_num.round() as i32;
-                let note_idx = note_num_round.rem_euclid(12) as usize;
-                let octave = (note_num_round / 12) - 1;
+                let delta = 0.5 * (y_l - y_r) / (y_l - 2.0 * y_c + y_r);
+                (max_idx as f32 + delta) * sample_rate / WINDOW_SIZE as f32
+            } else {
+                max_idx as f32 * sample_rate / WINDOW_SIZE as f32
+            };
 
-                if sender
-                    .send(AudioMessage {
-                        note: note_names[note_idx].to_string(),
-                        octave,
-                        freq: max_freq,
-                        amplitude: rms,
-                    })
-                    .is_err()
-                {
-                    break;
-                }
+            if interpolated_freq > 20.0 {
+                let note_number = 12.0 * (interpolated_freq / 440.0).log2() + 69.0;
+                let nearest_note_num = note_number.round() as i32;
+
+                let deviation = (note_number - nearest_note_num as f32) * 100.0;
+
+                let note_idx = nearest_note_num.rem_euclid(12) as usize;
+                let octave = (nearest_note_num / 12) - 1;
+
+                let _ = sender.send(AudioMessage {
+                    note_name: note_names[note_idx].to_string(),
+                    octave,
+                    freq: interpolated_freq,
+                    deviation_cents: deviation,
+                    amplitude: rms,
+                });
             }
         } else {
             let _ = sender.send(AudioMessage {
-                note: "--".to_string(),
+                note_name: "--".to_string(),
                 octave: 0,
                 freq: 0.0,
-                amplitude: rms,
+                deviation_cents: 0.0,
+                amplitude: 0.0,
             });
         }
 
@@ -209,8 +270,7 @@ fn run_audio_loop(sender: Sender<AudioMessage>) -> anyhow::Result<()> {
             for _ in 0..HOP_SIZE {
                 ring_buffer.pop_front();
             }
-            thread::sleep(std::time::Duration::from_millis(5));
+            thread::sleep(std::time::Duration::from_millis(1));
         }
     }
-    Ok(())
 }
