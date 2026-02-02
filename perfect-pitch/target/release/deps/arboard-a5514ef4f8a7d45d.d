@@ -1,0 +1,10 @@
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\arboard-a5514ef4f8a7d45d.d: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libarboard-a5514ef4f8a7d45d.rlib: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libarboard-a5514ef4f8a7d45d.rmeta: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs
+
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\lib.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\common.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\mod.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\arboard-3.6.1\src\platform\windows.rs:

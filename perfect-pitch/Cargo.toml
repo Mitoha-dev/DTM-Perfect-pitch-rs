@@ -1,0 +1,12 @@
+[package]
+name = "rust_tuner_gui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cpal = "0.15"
+rustfft = "6.1"
+num-complex = "0.4"
+num-traits = "0.2"
+anyhow = "1.0"
+eframe = "0.29"

@@ -1,0 +1,9 @@
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\accesskit_winit-f7e97afd19d6182c.d: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\mod.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\windows.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libaccesskit_winit-f7e97afd19d6182c.rlib: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\mod.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\windows.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libaccesskit_winit-f7e97afd19d6182c.rmeta: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\mod.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\windows.rs
+
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\lib.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\mod.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_winit-0.22.4\src\platform_impl\windows.rs:

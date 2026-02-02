@@ -1,0 +1,10 @@
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\num_complex-7140568111487ef0.d: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\cast.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\pow.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\complex_float.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libnum_complex-7140568111487ef0.rlib: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\cast.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\pow.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\complex_float.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libnum_complex-7140568111487ef0.rmeta: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\cast.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\pow.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\complex_float.rs
+
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\lib.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\cast.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\pow.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\num-complex-0.4.6\src\complex_float.rs:

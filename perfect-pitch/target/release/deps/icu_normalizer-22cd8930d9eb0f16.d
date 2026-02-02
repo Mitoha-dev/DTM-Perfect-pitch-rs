@@ -1,0 +1,10 @@
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\icu_normalizer-22cd8930d9eb0f16.d: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libicu_normalizer-22cd8930d9eb0f16.rlib: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libicu_normalizer-22cd8930d9eb0f16.rmeta: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs
+
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs:

@@ -1,0 +1,10 @@
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\autocfg-e137e6ca9ebf7b6a.d: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\error.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\rustc.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\version.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libautocfg-e137e6ca9ebf7b6a.rlib: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\error.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\rustc.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\version.rs
+
+C:\project\DTM-Perfect-pitch\DTM-Perfect-pitch-rs\perfect-pitch\target\release\deps\libautocfg-e137e6ca9ebf7b6a.rmeta: C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\lib.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\error.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\rustc.rs C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\version.rs
+
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\lib.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\error.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\rustc.rs:
+C:\Users\mitoh_7p4m2hk\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\autocfg-1.5.0\src\version.rs:
